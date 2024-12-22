@@ -13,7 +13,7 @@ import cn from "classnames"
 import { Tooltip } from 'react-tooltip'
 import { useState } from 'react'
 import { tooltipStyles } from "./tooltipStyles"
-
+import { TiArrowBack } from "react-icons/ti";
 function Sidebar() {
     const {
         activeView,
@@ -41,7 +41,9 @@ function Sidebar() {
             setIsSidebarOpen(false)
         }
     }
-
+    function handleClick(){
+        window.location.href = "http://localhost:3000/Home";
+      }
     return (
         <aside className="flex w-full md:h-full md:max-h-full md:min-h-full md:w-auto">
             <div
@@ -72,6 +74,9 @@ function Sidebar() {
                     viewName={VIEWS.SETTINGS}
                     icon={viewIcons[VIEWS.SETTINGS]}
                 />
+                <button onClick={handleClick} className="nav-icon skull">
+        <TiArrowBack size={35} color="white" />
+      </button>
 
                 {/* Button to change activity state coding or drawing */}
                 <div className="flex items-center justify-center h-fit">
